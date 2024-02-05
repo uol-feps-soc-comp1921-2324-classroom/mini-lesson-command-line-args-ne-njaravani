@@ -1,16 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 int main(int argc, char *argv[])
 
 {
+    // Presence check
     if (argc != 3)
     {
-        printf("Usage: %s <filename> <number of students>\n", argv[0]);
+        printf("Usage: %s <num1> <num2>\n", argv[0]);
         return 0;
     }
 
+    // Convert the arguments to integers
     int num1 = atoi(argv[1]);
     int num2 = atoi(argv[2]);
 
