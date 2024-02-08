@@ -6,6 +6,8 @@
 int main(int argc, char *argv[])
 
 {
+    int num1, num2;
+
     // Presence check
     if (argc != 3)
     {
@@ -13,9 +15,17 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-    // Convert the arguments to integers
-    int num1 = atoi(argv[1]);
-    int num2 = atoi(argv[2]);
+    // Convert the arguments to integers if they are digits
+    if (isdigit(*argv[1]) || isdigit(*argv[2]))
+    {
+        num1 = atoi(argv[1]);
+        num2 = atoi(argv[2]);
+    }
+    else
+    {
+        printf("Usage: %s <num1> <num2>\n", argv[0]);
+        return 0;
+    }
 
     // Prompt the user for input
     // printf("Enter the first number: ");
